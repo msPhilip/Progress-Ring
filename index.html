@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Circular Progress Bar</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+	<div class="box">
+		<svg>
+			<circle cx="60" cy="60" r="50"></circle>
+		</svg>
+		<div class="counter">0</div>
+		<div class="stop"></div>
+		<div class="progress">Progress Bar</div>
+	</div>
+
+	<script type="text/javascript">
+		var a = 1;
+	var run = setInterval(frames,100);
+	function frames(){
+		a = a + 1;
+		if( a == 101){
+			clearInterval(run);
+		}else{
+			var counter = document.querySelector(".counter");
+			counter.textContent = a + "%";
+		}
+	}
+
+    setTimeout(stopPoint,10000);
+    function stopPoint(){
+    	var stop = document.querySelector(".stop");
+    	stop.style.display = "block";
+    }
+
+	</script>
+</body>
+
+</html>
